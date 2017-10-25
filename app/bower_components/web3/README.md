@@ -1,3 +1,15 @@
+# Migration 0.13.0 -> 0.14.0
+
+web3.js version 0.14.0 supports [multiple instances of web3](https://github.com/ethereum/web3.js/issues/297) object.
+To migrate to this version, please follow the guide:
+
+```diff
+-var web3 = require('web3');
++var Web3 = require('web3');
++var web3 = new Web3();
+```
+
+
 # Ethereum JavaScript API
 
 [![Join the chat at https://gitter.im/ethereum/web3.js](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ethereum/web3.js?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -5,11 +17,11 @@
 This is the Ethereum compatible [JavaScript API](https://github.com/ethereum/wiki/wiki/JavaScript-API)
 which implements the [Generic JSON RPC](https://github.com/ethereum/wiki/wiki/JSON-RPC) spec. It's available on npm as a node module, for bower and component as an embeddable js and as a meteor.js package.
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![dependency status][dep-image]][dep-url] [![dev dependency status][dep-dev-image]][dep-dev-url][![Coverage Status][coveralls-image]][coveralls-url][![Stories in Ready][waffle-image]][waffle-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![dependency status][dep-image]][dep-url] [![dev dependency status][dep-dev-image]][dep-dev-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Stories in Ready][waffle-image]][waffle-url]
 
 <!-- [![browser support](https://ci.testling.com/ethereum/ethereum.js.png)](https://ci.testling.com/ethereum/ethereum.js) -->
 
-You need to run a local ethrereum node to use this library.
+You need to run a local Ethereum node to use this library.
 
 [Documentation](https://github.com/ethereum/wiki/wiki/JavaScript-API)
 
@@ -40,7 +52,7 @@ Component
 component install ethereum/web3.js
 ```
 
-* Include `ethereum.min.js` in your html file. (not required for the meteor package)
+* Include `web3.min.js` in your html file. (not required for the meteor package)
 
 ## Usage
 Use the `web3` object directly from global namespace:
